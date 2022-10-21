@@ -248,7 +248,7 @@ int Init(unsigned long adr, unsigned long clk, unsigned long fnc)
 #ifdef USE_ROM_API
     ROM_API_Init();
     serial_nor_config_option_t option;
-    option.option0.U = 0xc0000007U;
+    option.option0.U = 0xc0233007;  // HyperFLASH 1V8, Query pads: Octal, CMD pads: 8, Frequency: 133MHz
 
     status = ROM_FLEXSPI_NorFlash_GetConfig(FLEXSPI_NOR_INSTANCE, config, &option);
     log_result(ERROR_LOG_ADDR + INIT_OFF + (state++) * 4, status);
